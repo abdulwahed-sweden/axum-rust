@@ -65,16 +65,18 @@ jobs:
 
   # MSRV (Minimum Supported Rust Version) check
   # Verifies the project compiles with Rust 1.81, required by Tokio 1.48+
-  # Uses dtolnay/rust-toolchain with version tag to install exact Rust version
+  # Uses dtolnay/rust-toolchain with 'toolchain' input for version flexibility
   msrv:
     name: MSRV (1.81)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Install exact MSRV using dtolnay/rust-toolchain@<version> syntax
-      # This ensures Rust 1.81 is installed, matching rust-version in Cargo.toml
+      # Install exact MSRV using dtolnay/rust-toolchain's 'toolchain' input
+      # This allows using the MSRV env var for consistency and easy updates
       - name: Install Rust ${{ env.MSRV }}
-        uses: dtolnay/rust-toolchain@1.81
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ env.MSRV }}
       - name: Cache dependencies
         uses: Swatinem/rust-cache@v2
       # Use 'cargo check' instead of 'cargo build' for faster MSRV verification
