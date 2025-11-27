@@ -2,10 +2,10 @@ pub mod orders;
 pub mod products;
 
 use axum::{
-    Json,
     extract::{Path, State},
     http::StatusCode,
     response::Html,
+    Json,
 };
 
 use crate::{
