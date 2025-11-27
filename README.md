@@ -5,7 +5,7 @@
 A blazing-fast, type-safe REST API built with Rust and Axum.
 
 [![CI](https://github.com/abdulwahed-sweden/axum-rust/actions/workflows/rust.yml/badge.svg)](https://github.com/abdulwahed-sweden/axum-rust/actions/workflows/rust.yml)
-[![Rust](https://img.shields.io/badge/Rust-1.80+-orange?style=flat-square&logo=rust)](https://www.rust-lang.org/)
+[![Rust](https://img.shields.io/badge/Rust-1.81+-orange?style=flat-square&logo=rust)](https://www.rust-lang.org/)
 [![Axum](https://img.shields.io/badge/Axum-0.8-blue?style=flat-square)](https://github.com/tokio-rs/axum)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
@@ -33,7 +33,7 @@ Axum API is a modern REST API demonstrating best practices for building web serv
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| [Rust](https://www.rust-lang.org/) | 1.80+ | Systems programming language |
+| [Rust](https://www.rust-lang.org/) | 1.81+ | Systems programming language |
 | [Axum](https://github.com/tokio-rs/axum) | 0.8 | Ergonomic web framework |
 | [Tokio](https://tokio.rs/) | 1.48 | Async runtime |
 | [Serde](https://serde.rs/) | 1.0 | JSON serialization/deserialization |
@@ -43,7 +43,7 @@ Axum API is a modern REST API demonstrating best practices for building web serv
 
 ### Prerequisites
 
-- [Rust](https://rustup.rs/) 1.80 or higher
+- [Rust](https://rustup.rs/) 1.81 or higher
 - Cargo (comes with Rust)
 
 ### Installation

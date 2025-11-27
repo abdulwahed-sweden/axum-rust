@@ -2,7 +2,7 @@
 name = "axum_demo"
 version = "0.1.0"
 edition = "2021"
-rust-version = "1.80"
+rust-version = "1.81"
 
 [dependencies]
 axum = "0.8.7"
