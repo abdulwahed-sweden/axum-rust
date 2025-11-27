@@ -8,6 +8,9 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  # Minimum Supported Rust Version - must match rust-version in Cargo.toml
+  # Required for Tokio 1.48+ compatibility
+  MSRV: "1.81"
 
 jobs:
   fmt:
@@ -60,14 +63,20 @@ jobs:
       - name: Build
         run: cargo build --release
 
+  # MSRV (Minimum Supported Rust Version) check
+  # Verifies the project compiles with Rust 1.81, required by Tokio 1.48+
+  # Uses dtolnay/rust-toolchain with version tag to install exact Rust version
   msrv:
     name: MSRV (1.81)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Rust 1.81
+      # Install exact MSRV using dtolnay/rust-toolchain@<version> syntax
+      # This ensures Rust 1.81 is installed, matching rust-version in Cargo.toml
+      - name: Install Rust ${{ env.MSRV }}
         uses: dtolnay/rust-toolchain@1.81
       - name: Cache dependencies
         uses: Swatinem/rust-cache@v2
-      - name: Check MSRV
+      # Use 'cargo check' instead of 'cargo build' for faster MSRV verification
+      - name: Check MSRV compatibility
         run: cargo check --all-features
