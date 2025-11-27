@@ -32,11 +32,36 @@ impl Default for AppState {
 
 fn seed_users() -> Vec<User> {
     vec![
-        User { id: "1".into(), name: "Ada Lovelace".into(), email: "ada@example.com".into(), role: "admin".into() },
-        User { id: "2".into(), name: "Grace Hopper".into(), email: "grace@example.com".into(), role: "engineer".into() },
-        User { id: "3".into(), name: "Alan Turing".into(), email: "alan@example.com".into(), role: "researcher".into() },
-        User { id: "4".into(), name: "Katherine Johnson".into(), email: "katherine@example.com".into(), role: "analyst".into() },
-        User { id: "5".into(), name: "Linus Torvalds".into(), email: "linus@example.com".into(), role: "maintainer".into() },
+        User {
+            id: "1".into(),
+            name: "Ada Lovelace".into(),
+            email: "ada@example.com".into(),
+            role: "admin".into(),
+        },
+        User {
+            id: "2".into(),
+            name: "Grace Hopper".into(),
+            email: "grace@example.com".into(),
+            role: "engineer".into(),
+        },
+        User {
+            id: "3".into(),
+            name: "Alan Turing".into(),
+            email: "alan@example.com".into(),
+            role: "researcher".into(),
+        },
+        User {
+            id: "4".into(),
+            name: "Katherine Johnson".into(),
+            email: "katherine@example.com".into(),
+            role: "analyst".into(),
+        },
+        User {
+            id: "5".into(),
+            name: "Linus Torvalds".into(),
+            email: "linus@example.com".into(),
+            role: "maintainer".into(),
+        },
     ]
 }
 
