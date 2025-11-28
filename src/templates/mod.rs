@@ -5,9 +5,9 @@ pub fn landing_page() -> String {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferox Theme System - مرجع شامل</title>
+    <title>Ferox Theme System</title>
 
-    <!-- الخطوط -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -31,9 +31,167 @@ pub fn landing_page() -> String {
         }
     </script>
 
-    <!-- CSS Variables للثيم -->
+    <!-- Translation System -->
+    <script>
+        const translations = {
+            ar: {
+                // Header
+                stats: "الإحصائيات",
+                tables: "الجداول",
+                components: "المكونات",
+                api: "API",
+
+                // Hero
+                heroTitle: "نظام Ferox Theme",
+                heroSubtitle: "مرجع شامل للثيم الداكن والفاتح • مصمم للعمل الطويل وراحة العين",
+
+                // Statistics
+                statsTitle: "الإحصائيات",
+                users: "المستخدمون",
+                revenue: "الإيرادات",
+                orders: "الطلبات",
+                conversionRate: "معدل التحويل",
+
+                // Table
+                tableTitle: "جدول المعاملات",
+                name: "الاسم",
+                status: "الحالة",
+                amount: "المبلغ",
+                change: "التغيير",
+                date: "التاريخ",
+                completed: "مكتمل",
+                pending: "معلق",
+                cancelled: "ملغي",
+                processing: "قيد المعالجة",
+
+                // Names
+                name1: "أحمد محمد",
+                name2: "سارة علي",
+                name3: "خالد عبدالله",
+                name4: "نورة سعيد",
+                name5: "محمد إبراهيم",
+
+                // Dates
+                date1: "28 نوفمبر 2025",
+                date2: "27 نوفمبر 2025",
+                date3: "26 نوفمبر 2025",
+                date4: "25 نوفمبر 2025",
+                date5: "24 نوفمبر 2025",
+
+                // Components
+                componentsTitle: "المكونات",
+                buttons: "الأزرار",
+                badges: "الشارات",
+                alerts: "التنبيهات",
+                inputs: "حقول الإدخال",
+                email: "البريد الإلكتروني",
+                amountLabel: "المبلغ",
+
+                // Alerts
+                alertSuccess: "تمت العملية بنجاح!",
+                alertWarning: "تحذير: يرجى التحقق من البيانات.",
+                alertDanger: "حدث خطأ أثناء المعالجة.",
+                alertInfo: "معلومة: هذه رسالة إعلامية.",
+
+                // API
+                apiTitle: "API Endpoints",
+                method: "Method",
+                endpoint: "Endpoint",
+                description: "الوصف",
+                listUsers: "قائمة المستخدمين",
+                createUser: "إنشاء مستخدم جديد",
+                listProducts: "قائمة المنتجات",
+                listOrders: "قائمة الطلبات",
+                deleteUser: "حذف مستخدم",
+
+                // Colors
+                colorsTitle: "ملخص الألوان",
+
+                // Footer
+                footerText: "Ferox Theme System • مرجع شامل للمشاريع المستقبلية",
+            },
+            en: {
+                // Header
+                stats: "Statistics",
+                tables: "Tables",
+                components: "Components",
+                api: "API",
+
+                // Hero
+                heroTitle: "Ferox Theme System",
+                heroSubtitle: "A comprehensive reference for dark and light themes • Designed for long work sessions and eye comfort",
+
+                // Statistics
+                statsTitle: "Statistics",
+                users: "Users",
+                revenue: "Revenue",
+                orders: "Orders",
+                conversionRate: "Conversion Rate",
+
+                // Table
+                tableTitle: "Transactions Table",
+                name: "Name",
+                status: "Status",
+                amount: "Amount",
+                change: "Change",
+                date: "Date",
+                completed: "Completed",
+                pending: "Pending",
+                cancelled: "Cancelled",
+                processing: "Processing",
+
+                // Names
+                name1: "Ahmed Mohammed",
+                name2: "Sarah Ali",
+                name3: "Khalid Abdullah",
+                name4: "Noura Saeed",
+                name5: "Mohammed Ibrahim",
+
+                // Dates
+                date1: "Nov 28, 2025",
+                date2: "Nov 27, 2025",
+                date3: "Nov 26, 2025",
+                date4: "Nov 25, 2025",
+                date5: "Nov 24, 2025",
+
+                // Components
+                componentsTitle: "Components",
+                buttons: "Buttons",
+                badges: "Badges",
+                alerts: "Alerts",
+                inputs: "Input Fields",
+                email: "Email Address",
+                amountLabel: "Amount",
+
+                // Alerts
+                alertSuccess: "Operation completed successfully!",
+                alertWarning: "Warning: Please verify your data.",
+                alertDanger: "An error occurred during processing.",
+                alertInfo: "Info: This is an informational message.",
+
+                // API
+                apiTitle: "API Endpoints",
+                method: "Method",
+                endpoint: "Endpoint",
+                description: "Description",
+                listUsers: "List all users",
+                createUser: "Create a new user",
+                listProducts: "List all products",
+                listOrders: "List all orders",
+                deleteUser: "Delete a user",
+
+                // Colors
+                colorsTitle: "Color Palette",
+
+                // Footer
+                footerText: "Ferox Theme System • A comprehensive reference for future projects",
+            }
+        };
+    </script>
+
+    <!-- CSS Variables -->
     <style>
-        /* ========== الثيم الداكن (افتراضي) ========== */
+        /* ========== Dark Theme (Default) ========== */
         [data-theme="dark"] {
             --bg-base: #12161F;
             --bg-surface: #1A1F2B;
@@ -90,7 +248,7 @@ pub fn landing_page() -> String {
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
 
-        /* ========== الثيم الفاتح ========== */
+        /* ========== Light Theme ========== */
         [data-theme="light"] {
             --bg-base: #F4F5F7;
             --bg-surface: #FFFFFF;
@@ -147,15 +305,33 @@ pub fn landing_page() -> String {
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        /* الأنماط الأساسية */
-        html { font-size: 15px; }
+        /* Base Styles - Increased font size */
+        html { font-size: 16px; }
 
         body {
             font-family: 'IBM Plex Sans Arabic', 'Inter', system-ui, sans-serif;
             background-color: var(--bg-base);
             color: var(--text-primary);
             line-height: 1.6;
+            font-size: 1rem;
             transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        /* Increased text sizes for better readability */
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 1.375rem; }
+        h3 { font-size: 1.125rem; }
+
+        p, span, td, th, label, a {
+            font-size: 0.9375rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem !important;
+        }
+
+        .text-xs {
+            font-size: 0.8125rem !important;
         }
 
         /* Scrollbar */
@@ -167,12 +343,13 @@ pub fn landing_page() -> String {
         /* Selection */
         ::selection { background: var(--primary-soft); color: var(--text-primary); }
 
-        /* الأرقام */
+        /* Numbers - Keep original size */
         .number-display {
             font-family: 'Inter', 'IBM Plex Sans Arabic', system-ui, sans-serif;
             font-weight: 700;
             font-variant-numeric: tabular-nums;
             letter-spacing: -0.02em;
+            direction: ltr;
         }
 
         .data-cell {
@@ -240,14 +417,14 @@ pub fn landing_page() -> String {
             background: #B91C1C;
         }
 
-        /* Theme Toggle */
-        .theme-toggle {
+        /* Toggle Buttons */
+        .toggle-btn {
             background: var(--bg-elevated);
             border: 1px solid var(--border-subtle);
             color: var(--text-secondary);
             transition: all 0.2s ease;
         }
-        .theme-toggle:hover {
+        .toggle-btn:hover {
             background: var(--bg-hover);
             border-color: var(--border-default);
         }
@@ -264,14 +441,41 @@ pub fn landing_page() -> String {
             box-shadow: 0 0 0 3px var(--primary-soft);
             outline: none;
         }
+
+        /* LTR Support */
+        [dir="ltr"] {
+            text-align: left;
+        }
+
+        [dir="ltr"] th,
+        [dir="ltr"] td {
+            text-align: left;
+        }
+
+        [dir="ltr"] .text-right {
+            text-align: left;
+        }
+
+        /* Table alignment classes */
+        .table-cell {
+            text-align: inherit;
+        }
+
+        [dir="rtl"] .table-cell {
+            text-align: right;
+        }
+
+        [dir="ltr"] .table-cell {
+            text-align: left;
+        }
     </style>
 </head>
 <body class="min-h-screen">
 
-    <!-- ===== الهيدر ===== -->
+    <!-- ===== Header ===== -->
     <header class="theme-transition" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-subtle);">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-            <!-- الشعار -->
+            <!-- Logo -->
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xl" style="background: var(--primary);">
                     F
@@ -279,31 +483,39 @@ pub fn landing_page() -> String {
                 <span class="font-bold text-lg" style="color: var(--text-primary);">Ferox Theme</span>
             </div>
 
-            <!-- التنقل -->
+            <!-- Navigation -->
             <nav class="flex items-center gap-6">
-                <a href="#stats" class="nav-link text-sm font-medium">الإحصائيات</a>
-                <a href="#table" class="nav-link text-sm font-medium">الجداول</a>
-                <a href="#components" class="nav-link text-sm font-medium">المكونات</a>
-                <a href="#api" class="nav-link text-sm font-medium">API</a>
+                <a href="#stats" class="nav-link text-sm font-medium" data-i18n="stats">الإحصائيات</a>
+                <a href="#table" class="nav-link text-sm font-medium" data-i18n="tables">الجداول</a>
+                <a href="#components" class="nav-link text-sm font-medium" data-i18n="components">المكونات</a>
+                <a href="#api" class="nav-link text-sm font-medium" data-i18n="api">API</a>
             </nav>
 
-            <!-- زر التبديل -->
-            <button id="theme-toggle" class="theme-toggle w-10 h-10 rounded-lg flex items-center justify-center" onclick="toggleTheme()">
-                <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
+            <!-- Toggle Buttons -->
+            <div class="flex items-center gap-2">
+                <!-- Language Toggle -->
+                <button id="lang-toggle" class="toggle-btn px-3 py-2 rounded-lg text-sm font-semibold" onclick="toggleLanguage()">
+                    <span id="lang-text">EN</span>
+                </button>
+
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="toggle-btn w-10 h-10 rounded-lg flex items-center justify-center" onclick="toggleTheme()">
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -311,11 +523,11 @@ pub fn landing_page() -> String {
 
         <!-- ===== Hero Section ===== -->
         <section class="text-center py-12 mb-12">
-            <h1 class="text-4xl font-bold mb-4" style="color: var(--text-primary);">
+            <h1 class="font-bold mb-4" style="color: var(--text-primary);" data-i18n="heroTitle">
                 نظام Ferox Theme
             </h1>
-            <p class="text-lg mb-6" style="color: var(--text-secondary);">
-                مرجع شامل للثيم الداكن والفاتح - مصمم للعمل الطويل وراحة العين
+            <p class="text-lg mb-6" style="color: var(--text-secondary);" data-i18n="heroSubtitle">
+                مرجع شامل للثيم الداكن والفاتح • مصمم للعمل الطويل وراحة العين
             </p>
             <div class="flex items-center justify-center gap-4">
                 <span class="px-3 py-1 rounded-full text-xs font-medium"
@@ -333,16 +545,16 @@ pub fn landing_page() -> String {
             </div>
         </section>
 
-        <!-- ===== بطاقات الإحصائيات ===== -->
+        <!-- ===== Statistics Cards ===== -->
         <section id="stats" class="mb-12">
-            <h2 class="text-xl font-bold mb-6" style="color: var(--text-primary);">الإحصائيات</h2>
+            <h2 class="font-bold mb-6" style="color: var(--text-primary);" data-i18n="statsTitle">الإحصائيات</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
-                <!-- بطاقة 1 -->
+                <!-- Card 1 -->
                 <div class="stat-card rounded-xl p-5 cursor-pointer">
                     <div class="flex justify-between items-start">
                         <div>
-                            <p class="text-sm mb-2" style="color: var(--text-secondary);">المستخدمون</p>
+                            <p class="text-sm mb-2" style="color: var(--text-secondary);" data-i18n="users">المستخدمون</p>
                             <h3 class="number-display text-3xl mb-2" style="color: var(--text-number);">15,847</h3>
                             <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium"
                                   style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);">
@@ -362,11 +574,11 @@ pub fn landing_page() -> String {
                     </div>
                 </div>
 
-                <!-- بطاقة 2 -->
+                <!-- Card 2 -->
                 <div class="stat-card rounded-xl p-5 cursor-pointer">
                     <div class="flex justify-between items-start">
                         <div>
-                            <p class="text-sm mb-2" style="color: var(--text-secondary);">الإيرادات</p>
+                            <p class="text-sm mb-2" style="color: var(--text-secondary);" data-i18n="revenue">الإيرادات</p>
                             <h3 class="number-display text-3xl mb-2" style="color: var(--text-number);">$284,590</h3>
                             <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium"
                                   style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);">
@@ -386,11 +598,11 @@ pub fn landing_page() -> String {
                     </div>
                 </div>
 
-                <!-- بطاقة 3 -->
+                <!-- Card 3 -->
                 <div class="stat-card rounded-xl p-5 cursor-pointer">
                     <div class="flex justify-between items-start">
                         <div>
-                            <p class="text-sm mb-2" style="color: var(--text-secondary);">الطلبات</p>
+                            <p class="text-sm mb-2" style="color: var(--text-secondary);" data-i18n="orders">الطلبات</p>
                             <h3 class="number-display text-3xl mb-2" style="color: var(--text-number);">1,284</h3>
                             <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium"
                                   style="background: var(--danger-soft); color: var(--danger-text); border: 1px solid var(--danger-border);">
@@ -411,11 +623,11 @@ pub fn landing_page() -> String {
                     </div>
                 </div>
 
-                <!-- بطاقة 4 -->
+                <!-- Card 4 -->
                 <div class="stat-card rounded-xl p-5 cursor-pointer">
                     <div class="flex justify-between items-start">
                         <div>
-                            <p class="text-sm mb-2" style="color: var(--text-secondary);">معدل التحويل</p>
+                            <p class="text-sm mb-2" style="color: var(--text-secondary);" data-i18n="conversionRate">معدل التحويل</p>
                             <h3 class="number-display text-3xl mb-2" style="color: var(--text-number);">24.8%</h3>
                             <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium"
                                   style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);">
@@ -437,97 +649,97 @@ pub fn landing_page() -> String {
             </div>
         </section>
 
-        <!-- ===== الجدول ===== -->
+        <!-- ===== Table ===== -->
         <section id="table" class="mb-12">
-            <h2 class="text-xl font-bold mb-6" style="color: var(--text-primary);">جدول المعاملات</h2>
+            <h2 class="font-bold mb-6" style="color: var(--text-primary);" data-i18n="tableTitle">جدول المعاملات</h2>
             <div class="rounded-xl overflow-hidden theme-transition"
                  style="background: var(--bg-surface); border: 1px solid var(--border-subtle); box-shadow: var(--shadow-card);">
                 <table class="w-full">
                     <thead>
                         <tr style="background: var(--bg-elevated);">
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);">الاسم</th>
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);">الحالة</th>
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);">المبلغ</th>
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);">التغيير</th>
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);">التاريخ</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);" data-i18n="name">الاسم</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);" data-i18n="status">الحالة</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);" data-i18n="amount">المبلغ</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);" data-i18n="change">التغيير</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase tracking-wider" style="color: var(--text-tertiary);" data-i18n="date">التاريخ</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="table-row" style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3" style="color: var(--text-primary);">أحمد محمد</td>
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3" style="color: var(--text-primary);" data-i18n="name1">أحمد محمد</td>
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded-full text-xs font-medium"
-                                      style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);">
+                                      style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);" data-i18n="completed">
                                     مكتمل
                                 </span>
                             </td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$2,450.00</td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--data-positive);">+12.5%</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-tertiary);">28 نوفمبر 2025</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$2,450.00</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--data-positive);">+12.5%</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-tertiary);" data-i18n="date1">28 نوفمبر 2025</td>
                         </tr>
                         <tr class="table-row" style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3" style="color: var(--text-primary);">سارة علي</td>
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3" style="color: var(--text-primary);" data-i18n="name2">سارة علي</td>
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded-full text-xs font-medium"
-                                      style="background: var(--warning-soft); color: var(--warning-text); border: 1px solid var(--warning-border);">
+                                      style="background: var(--warning-soft); color: var(--warning-text); border: 1px solid var(--warning-border);" data-i18n="pending">
                                     معلق
                                 </span>
                             </td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$1,890.00</td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--data-negative);">-3.2%</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-tertiary);">27 نوفمبر 2025</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$1,890.00</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--data-negative);">-3.2%</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-tertiary);" data-i18n="date2">27 نوفمبر 2025</td>
                         </tr>
                         <tr class="table-row" style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3" style="color: var(--text-primary);">خالد عبدالله</td>
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3" style="color: var(--text-primary);" data-i18n="name3">خالد عبدالله</td>
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded-full text-xs font-medium"
-                                      style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);">
+                                      style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);" data-i18n="completed">
                                     مكتمل
                                 </span>
                             </td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$3,200.00</td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--data-positive);">+8.7%</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-tertiary);">26 نوفمبر 2025</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$3,200.00</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--data-positive);">+8.7%</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-tertiary);" data-i18n="date3">26 نوفمبر 2025</td>
                         </tr>
                         <tr class="table-row" style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3" style="color: var(--text-primary);">نورة سعيد</td>
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3" style="color: var(--text-primary);" data-i18n="name4">نورة سعيد</td>
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded-full text-xs font-medium"
-                                      style="background: var(--danger-soft); color: var(--danger-text); border: 1px solid var(--danger-border);">
+                                      style="background: var(--danger-soft); color: var(--danger-text); border: 1px solid var(--danger-border);" data-i18n="cancelled">
                                     ملغي
                                 </span>
                             </td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$950.00</td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--data-negative);">-15.3%</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-tertiary);">25 نوفمبر 2025</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$950.00</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--data-negative);">-15.3%</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-tertiary);" data-i18n="date4">25 نوفمبر 2025</td>
                         </tr>
                         <tr class="table-row">
-                            <td class="px-4 py-3" style="color: var(--text-primary);">محمد إبراهيم</td>
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3" style="color: var(--text-primary);" data-i18n="name5">محمد إبراهيم</td>
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded-full text-xs font-medium"
-                                      style="background: var(--info-soft); color: var(--info-text); border: 1px solid var(--info-border);">
+                                      style="background: var(--info-soft); color: var(--info-text); border: 1px solid var(--info-border);" data-i18n="processing">
                                     قيد المعالجة
                                 </span>
                             </td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$4,100.00</td>
-                            <td class="px-4 py-3 data-cell font-medium" style="color: var(--data-positive);">+22.1%</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-tertiary);">24 نوفمبر 2025</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--text-number-secondary);">$4,100.00</td>
+                            <td class="table-cell px-4 py-3 data-cell font-medium" style="color: var(--data-positive);">+22.1%</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-tertiary);" data-i18n="date5">24 نوفمبر 2025</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- ===== المكونات ===== -->
+        <!-- ===== Components ===== -->
         <section id="components" class="mb-12">
-            <h2 class="text-xl font-bold mb-6" style="color: var(--text-primary);">المكونات</h2>
+            <h2 class="font-bold mb-6" style="color: var(--text-primary);" data-i18n="componentsTitle">المكونات</h2>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-                <!-- الأزرار -->
+                <!-- Buttons -->
                 <div class="rounded-xl p-6 theme-transition"
                      style="background: var(--bg-surface); border: 1px solid var(--border-subtle);">
-                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);">الأزرار</h3>
+                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);" data-i18n="buttons">الأزرار</h3>
                     <div class="flex flex-wrap gap-3">
                         <button class="btn-primary px-4 py-2 rounded-lg text-sm font-medium text-white">
                             Primary
@@ -549,10 +761,10 @@ pub fn landing_page() -> String {
                     </div>
                 </div>
 
-                <!-- الشارات -->
+                <!-- Badges -->
                 <div class="rounded-xl p-6 theme-transition"
                      style="background: var(--bg-surface); border: 1px solid var(--border-subtle);">
-                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);">الشارات</h3>
+                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);" data-i18n="badges">الشارات</h3>
                     <div class="flex flex-wrap gap-3">
                         <span class="px-3 py-1 rounded-full text-xs font-medium"
                               style="background: var(--primary-soft); color: var(--primary-text); border: 1px solid var(--primary);">
@@ -581,42 +793,42 @@ pub fn landing_page() -> String {
                     </div>
                 </div>
 
-                <!-- التنبيهات -->
+                <!-- Alerts -->
                 <div class="rounded-xl p-6 theme-transition"
                      style="background: var(--bg-surface); border: 1px solid var(--border-subtle);">
-                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);">التنبيهات</h3>
+                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);" data-i18n="alerts">التنبيهات</h3>
                     <div class="space-y-3">
                         <div class="p-3 rounded-lg text-sm"
-                             style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);">
+                             style="background: var(--success-soft); color: var(--success-text); border: 1px solid var(--success-border);" data-i18n="alertSuccess">
                             تمت العملية بنجاح!
                         </div>
                         <div class="p-3 rounded-lg text-sm"
-                             style="background: var(--warning-soft); color: var(--warning-text); border: 1px solid var(--warning-border);">
+                             style="background: var(--warning-soft); color: var(--warning-text); border: 1px solid var(--warning-border);" data-i18n="alertWarning">
                             تحذير: يرجى التحقق من البيانات.
                         </div>
                         <div class="p-3 rounded-lg text-sm"
-                             style="background: var(--danger-soft); color: var(--danger-text); border: 1px solid var(--danger-border);">
+                             style="background: var(--danger-soft); color: var(--danger-text); border: 1px solid var(--danger-border);" data-i18n="alertDanger">
                             حدث خطأ أثناء المعالجة.
                         </div>
                         <div class="p-3 rounded-lg text-sm"
-                             style="background: var(--info-soft); color: var(--info-text); border: 1px solid var(--info-border);">
+                             style="background: var(--info-soft); color: var(--info-text); border: 1px solid var(--info-border);" data-i18n="alertInfo">
                             معلومة: هذه رسالة إعلامية.
                         </div>
                     </div>
                 </div>
 
-                <!-- حقول الإدخال -->
+                <!-- Input Fields -->
                 <div class="rounded-xl p-6 theme-transition"
                      style="background: var(--bg-surface); border: 1px solid var(--border-subtle);">
-                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);">حقول الإدخال</h3>
+                    <h3 class="font-semibold mb-4" style="color: var(--text-primary);" data-i18n="inputs">حقول الإدخال</h3>
                     <div class="space-y-4">
                         <div>
-                            <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">البريد الإلكتروني</label>
+                            <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);" data-i18n="email">البريد الإلكتروني</label>
                             <input type="email" placeholder="example@email.com"
                                    class="input-field w-full px-3 py-2 rounded-lg text-sm">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);">المبلغ</label>
+                            <label class="block text-sm font-medium mb-1" style="color: var(--text-secondary);" data-i18n="amountLabel">المبلغ</label>
                             <input type="text" placeholder="0.00" value="1,234.56"
                                    class="input-field w-full px-3 py-2 rounded-lg text-sm data-cell">
                         </div>
@@ -628,66 +840,66 @@ pub fn landing_page() -> String {
 
         <!-- ===== API Reference ===== -->
         <section id="api" class="mb-12">
-            <h2 class="text-xl font-bold mb-6" style="color: var(--text-primary);">API Endpoints</h2>
+            <h2 class="font-bold mb-6" style="color: var(--text-primary);" data-i18n="apiTitle">API Endpoints</h2>
             <div class="rounded-xl overflow-hidden theme-transition"
                  style="background: var(--bg-surface); border: 1px solid var(--border-subtle);">
                 <table class="w-full">
                     <thead>
                         <tr style="background: var(--bg-elevated);">
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase" style="color: var(--text-tertiary);">Method</th>
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase" style="color: var(--text-tertiary);">Endpoint</th>
-                            <th class="text-right px-4 py-3 text-xs font-semibold uppercase" style="color: var(--text-tertiary);">الوصف</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase" style="color: var(--text-tertiary);" data-i18n="method">Method</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase" style="color: var(--text-tertiary);" data-i18n="endpoint">Endpoint</th>
+                            <th class="table-cell px-4 py-3 text-xs font-semibold uppercase" style="color: var(--text-tertiary);" data-i18n="description">الوصف</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded text-xs font-mono font-medium"
                                       style="background: var(--success-soft); color: var(--success-text);">GET</span>
                             </td>
-                            <td class="px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/users</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-secondary);">قائمة المستخدمين</td>
+                            <td class="table-cell px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/users</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-secondary);" data-i18n="listUsers">قائمة المستخدمين</td>
                         </tr>
                         <tr style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded text-xs font-mono font-medium"
                                       style="background: var(--primary-soft); color: var(--primary-text);">POST</span>
                             </td>
-                            <td class="px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/users</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-secondary);">إنشاء مستخدم جديد</td>
+                            <td class="table-cell px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/users</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-secondary);" data-i18n="createUser">إنشاء مستخدم جديد</td>
                         </tr>
                         <tr style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded text-xs font-mono font-medium"
                                       style="background: var(--success-soft); color: var(--success-text);">GET</span>
                             </td>
-                            <td class="px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/products</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-secondary);">قائمة المنتجات</td>
+                            <td class="table-cell px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/products</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-secondary);" data-i18n="listProducts">قائمة المنتجات</td>
                         </tr>
                         <tr style="border-bottom: 1px solid var(--border-subtle);">
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded text-xs font-mono font-medium"
                                       style="background: var(--success-soft); color: var(--success-text);">GET</span>
                             </td>
-                            <td class="px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/orders</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-secondary);">قائمة الطلبات</td>
+                            <td class="table-cell px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/orders</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-secondary);" data-i18n="listOrders">قائمة الطلبات</td>
                         </tr>
                         <tr>
-                            <td class="px-4 py-3">
+                            <td class="table-cell px-4 py-3">
                                 <span class="px-2 py-0.5 rounded text-xs font-mono font-medium"
                                       style="background: var(--danger-soft); color: var(--danger-text);">DELETE</span>
                             </td>
-                            <td class="px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/users/{id}</td>
-                            <td class="px-4 py-3 text-sm" style="color: var(--text-secondary);">حذف مستخدم</td>
+                            <td class="table-cell px-4 py-3 font-mono text-sm" style="color: var(--text-primary);">/users/{id}</td>
+                            <td class="table-cell px-4 py-3 text-sm" style="color: var(--text-secondary);" data-i18n="deleteUser">حذف مستخدم</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- ===== ملخص الألوان ===== -->
+        <!-- ===== Color Palette ===== -->
         <section class="mb-12">
-            <h2 class="text-xl font-bold mb-6" style="color: var(--text-primary);">ملخص الألوان</h2>
+            <h2 class="font-bold mb-6" style="color: var(--text-primary);" data-i18n="colorsTitle">ملخص الألوان</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 <div class="text-center">
                     <div class="w-full h-16 rounded-lg mb-2" style="background: var(--primary);"></div>
@@ -718,22 +930,31 @@ pub fn landing_page() -> String {
 
     </main>
 
-    <!-- ===== الفوتر ===== -->
+    <!-- ===== Footer ===== -->
     <footer class="theme-transition" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
         <div class="max-w-7xl mx-auto px-6 py-6 text-center">
             <p class="text-sm" style="color: var(--text-tertiary);">
-                Ferox Theme System - مرجع شامل للمشاريع المستقبلية -
+                <span data-i18n="footerText">Ferox Theme System • مرجع شامل للمشاريع المستقبلية</span> •
                 <span class="data-cell" style="color: var(--text-secondary);">v1.0.0</span>
             </p>
         </div>
     </footer>
 
-    <!-- ===== JavaScript للتبديل ===== -->
+    <!-- ===== JavaScript ===== -->
     <script>
-        // قراءة الثيم المحفوظ
+        // Initialize saved preferences
         const savedTheme = localStorage.getItem('ferox-theme') || 'dark';
+        let currentLang = localStorage.getItem('ferox-lang') || 'ar';
+
+        // Apply theme
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeIcon(savedTheme);
+
+        // Apply language
+        document.documentElement.setAttribute('lang', currentLang);
+        document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+        updateLanguage(currentLang);
+        updateLangButton(currentLang);
 
         function toggleTheme() {
             const html = document.documentElement;
@@ -756,6 +977,36 @@ pub fn landing_page() -> String {
                 sunIcon.classList.remove('hidden');
                 moonIcon.classList.add('hidden');
             }
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+
+            // Update direction
+            document.documentElement.setAttribute('lang', currentLang);
+            document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+
+            // Save language
+            localStorage.setItem('ferox-lang', currentLang);
+
+            // Update texts
+            updateLanguage(currentLang);
+            updateLangButton(currentLang);
+        }
+
+        function updateLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        function updateLangButton(lang) {
+            const langText = document.getElementById('lang-text');
+            langText.textContent = lang === 'ar' ? 'EN' : 'AR';
         }
     </script>
 
